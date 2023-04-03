@@ -3,5 +3,6 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home2/aidasxai/public_html/
     - source /home2/aidasxai/nodevenv/public_html/aidas2023/16/bin/activate && cd /home2/aidasxai/public_html/aidas2023
-    - npm install && npm run build
-    /bin/cp -rf ./dist/* $DEPLOYPATH
+    - npm install
+    - npm run build -- --max-old-space-size=4096
+    - /bin/cp -rf ./dist/* $DEPLOYPATH
