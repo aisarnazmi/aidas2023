@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home2/aidasxai/public_html/
+    - /usr/local/bin/npm install
+    - /usr/local/bin/npm run build
+    - /bin/cp -rf ./dist/* $DEPLOYPATH
