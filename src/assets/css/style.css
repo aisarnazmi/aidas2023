@@ -471,7 +471,7 @@ hr {
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  background-image: url(/src/assets/images/banner/group.png);
+  background-image: url(/src/assets/images/banner/bg2.jpg);
 }
 .hero-sec .hero-slider-item {
   position: relative;
@@ -3278,11 +3278,17 @@ hr {
   position: relative;
 }
 .hero-sec .item-content2 .item-title2 {
-  font-size: 100px;
-  color: #212121;
-  line-height: 130px;
+  font-size: 70px;
+  color: #fbfbfb;
+  line-height: 100px;
   margin-bottom: 30px;
 }
+
+.hero-sec .item-content2 .item-subtitle2 {
+  color: #efefef;
+  line-height: 38px;
+}
+
 .hero-sec .item-content2 .conference-video {
   text-align: center;
 }

@@ -3,59 +3,129 @@ import NavBar from '@/components/NavBar.vue'
 </script>
 
 <script>
+import '@/assets/js/parallax.min.js'
+import '@/assets/js/jquery.countdown.min.js'
+
 export default {
 	mounted() {
-		const $ = window.jQuery;
-
-		/* sticky header - start*/
-		$(window).on('scroll', function () {
-			if ($(this).scrollTop() > 120) {
-				$('.header-nav').addClass("sticky")
-			} else {
-				$('.header-nav').removeClass("sticky")
-			}
-		});
-		/* sticky header - end */
-
-		/* bg parallax - start */
-		$('[data-parallax]').parallax({
-			speed: .6,
-		});
-		/* bg parallax - end */
-
-		/* counter */
-		$('.counter-box[data-countdown]').each(function () {
-			var $this = $(this), finalDate = $(this).data('countdown');
-			$this.countdown(finalDate, function (event) {
-				$(this).html(event.strftime(''
-					+ '<li class="days"><strong class="day2">%D</strong><span class="d-block">Days</span></li>'
-					+ '<li class="hours"><strong class="hours2">%H</strong><span class="d-block">Hours</span></li>'
-					+ '<li class="minutes"><strong class="min2">%M</strong><span class="d-block">Minutes</span></li>'
-					+ '<li class="seconds"><strong class="sec2">%S</strong><span class="d-block">Seconds</span></li>'));
-			});
-		});
-		/* counter */
-
-		/* magnific popup */
-		$('.zoom-gallery').magnificPopup({
-			delegate: '.item-thumb',
-			type: 'image',
-			closeOnContentClick: false,
-			closeBtnInside: false,
-			mainClass: 'mfp-with-zoom mfp-img-mobile',
-			gallery: {
-				enabled: true
-			},
-			zoom: {
-				enabled: true,
-				duration: 300,
-				opener: function (element) {
-					return element.find('img');
+		(function ($) {
+			$(window).on('scroll', function () {
+				if ($(this).scrollTop() > 120) {
+					$('.header-nav').addClass("sticky")
+				} else {
+					$('.header-nav').removeClass("sticky")
 				}
-			}
-		});
-	}
+			});
+			/* sticky header - end */
 
+			/* bg parallax - start */
+
+			$('[data-parallax]').parallax({
+				speed: .6,
+			});
+			/* bg parallax - end */
+
+			/* hero sec start sec end */
+			$('.hero-slider-wrap').slick({
+				dots: false,
+				speed: 1000,
+				arrows: false,
+				infinite: true,
+				autoplay: true,
+				slidesToShow: 1,
+				pauseOnHover: true,
+				autoplaySpeed: 6000,
+
+			});
+
+			/* hero sec start sec end */
+
+			/* review sec start start */
+
+			$('.review-card-items-wrap').slick({
+				dots: true,
+				infinite: true,
+				autoplay: true,
+				speed: 300,
+				slidesToShow: 3,
+				slidesToScroll: 3,
+				prevArrow: ".main-left-arrow",
+				nextArrow: ".main-right-arrow",
+				responsive: [
+					{
+						breakpoint: 1024,
+						settings: {
+							slidesToShow: 3,
+						}
+					},
+					{
+						breakpoint: 991.98,
+						settings: {
+							slidesToShow: 2,
+						}
+					},
+					{
+						breakpoint: 767.98,
+						settings: {
+							slidesToShow: 1,
+						}
+					}
+
+				]
+			});
+			/* review sec start sec end */
+
+			/* counter */
+			$('.counter-box[data-countdown]').each(function () {
+				var $this = $(this), finalDate = $(this).data('countdown');
+				$this.countdown(finalDate, function (event) {
+					$(this).html(event.strftime(''
+						+ '<li class="days"><strong class="day2">%D</strong><span class="d-block">Days</span></li>'
+						+ '<li class="hours"><strong class="hours2">%H</strong><span class="d-block">Hours</span></li>'
+						+ '<li class="minutes"><strong class="min2">%M</strong><span class="d-block">Minutes</span></li>'
+						+ '<li class="seconds"><strong class="sec2">%S</strong><span class="d-block">Seconds</span></li>'));
+				});
+			});
+			/* counter */
+
+
+			$(document).on('click', '.mode', function (e) {
+				e.preventDefault;
+				if ($('body').hasClass('dark-version')) {
+					$('body').removeClass('dark-version');
+					$('.mode .fa-moon').show();
+					$('.mode .fa-sun').hide();
+				} else {
+					$('body').addClass('dark-version');
+					$('.mode .fa-moon').hide();
+					$('.mode .fa-sun').show();
+				}
+			});
+
+
+
+			$(document).ready(function () {
+				$('.zoom-gallery').magnificPopup({
+					delegate: '.item-thumb',
+					type: 'image',
+					closeOnContentClick: false,
+					closeBtnInside: false,
+					mainClass: 'mfp-with-zoom mfp-img-mobile',
+					gallery: {
+						enabled: true
+					},
+					zoom: {
+						enabled: true,
+						duration: 300,
+						opener: function (element) {
+							return element.find('img');
+						}
+					}
+				});
+			});
+
+		})(window.jQuery)
+	}
 }
 </script>
 
@@ -296,8 +366,8 @@ export default {
 											Data Science Tracks
 										</button>
 									</h2>
-									<div id="collapseOne" class="accordion-collapse collapse"
-										aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+									<div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+										data-bs-parent="#accordionExample">
 										<div class="accordion-body">
 											<div class="cfp-grid-container">
 												<div class="cfp-grid-item"><span></span> AI and Creativity</div>
@@ -402,8 +472,8 @@ export default {
 											Call For Reviewer
 										</button>
 									</h2>
-									<div id="collapseThree" class="accordion-collapse show"
-										aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+									<div id="collapseThree" class="accordion-collapse show" aria-labelledby="headingOne"
+										data-bs-parent="#accordionExample">
 										<div class="accordion-body">
 											<p class="desc">We invite experts from related research areas to be part of us
 												by participating
@@ -570,79 +640,10 @@ export default {
 				</div>
 				<hr>
 				<div class="footer-copyright-area text-center pb-3">
-					<span>Copyright © 2022 All Rights Reserved by <a href="#">UiTM Perak</a></span>
+					<span>Copyright © 2023 All Rights Reserved by <a href="#">UiTM Perak</a></span>
 				</div>
 			</div>
 		</footer>
 		<!-- footer area end -->
-
-		<!-- Modal -->
-		<div class="modal fade popup-modal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
-			tabindex="-1" aria-hidden="true">
-			<div class="modal-dialog modal-lg popup-dialogue modal-dialog-centered">
-				<div class="modal-content popup-content p-4 bg-white">
-					<button type="button" class="btn btn-secondary  ms-auto" data-bs-dismiss="modal"><i
-							class="fa-solid fa-xmark"></i></button>
-
-					<div class="modal-body popup-body">
-						<iframe width="100%" height="400" src="https://www.youtube.com/embed/1dtzSRlfBDk"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-							allowfullscreen></iframe>
-					</div>
-
-				</div>
-			</div>
-		</div>
-
-		<!-- Button trigger modal -->
-
-		<!-- Modal 2 -->
-		<div class="modal  popup-box fade" id="exampleModal" tabindex="-1" aria-hidden="true">
-			<div class="modal-dialog popup-box-dialog modal-dialog-centered">
-				<div class="modal-content popup-box-content">
-					<div class="popup-card" style="width:100%">
-						<button type="button" class="btn popup2-btn  ms-auto" data-bs-dismiss="modal"><i
-								class="fa-solid fa-xmark"></i></button>
-						<img src="../assets/images/popup.png" class="card-img-top" alt="popup-bg">
-						<div class="card-body popup-card-body">
-							<div class="popup-title-area">
-								<p class="popup-sub">October 2, 2023</p>
-								<h5 class="card-title popup-title">Virtual sessions. Eventor Live@MAX</h5>
-							</div>
-							<a href="#" class="btn popup-play" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i
-									class="fa-solid fa-play"></i></a>
-						</div>
-						<form action="#" class="popup-form">
-							<div class="row gy-3 mb-3">
-								<div class="col-lg-6">
-									<label for="exampleFormControlInput5" class="form-label">Full Name</label>
-									<input type="text" class="form-control" id="exampleFormControlInput5"
-										placeholder="Your Full Name" required>
-								</div>
-								<div class="col-lg-6">
-									<label for="exampleFormControlInput6" class="form-label">Email</label>
-									<input type="email" class="form-control" id="exampleFormControlInput6"
-										placeholder="Enter Email" required>
-								</div>
-								<div class="col-lg-6">
-									<label for="exampleFormControlInput7" class="form-label">Phone</label>
-									<input type="text" class="form-control" id="exampleFormControlInput7"
-										placeholder="Enter Phone" required>
-								</div>
-								<div class="col-lg-6">
-									<label for="exampleFormControlInput8" class="form-label">Conference</label>
-									<select class="form-control bg-black-50" name="" id="">
-										<option value="">Early Bird ($10)</option>
-										<option value="">Regular ($20)</option>
-										<option value="">VIP ($50)</option>
-									</select>
-								</div>
-							</div>
-							<button class="custom-btn2">Buy Now</button>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
 	</div>
 </template>
