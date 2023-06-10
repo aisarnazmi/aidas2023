@@ -1,5 +1,7 @@
 <script setup>
-import NavBar from '@/components/NavBar.vue'
+import NavBar from '@/components/NavBarComponent.vue'
+import ParticleWave from '@/components/ParticleWaveComponent.vue';
+
 </script>
 
 <script>
@@ -140,6 +142,7 @@ export default {
 				<div class="hero-slider-wrap">
 					<div class="hero-slider-item overflow-hidden">
 						<div class="container position-relative">
+
 							<div class="row align-items-center slide-2">
 								<div class="text-center">
 									<div class="slider-item-content-wrap">
@@ -156,12 +159,14 @@ export default {
 									</div>
 								</div>
 							</div>
+
 							<div class="dots">
 								<img src="../assets/images/dots/dots2.png" alt="Shadow Image"
 									class="dots-4 img-moving-anim2">
 							</div>
 						</div>
 						<img src="../assets/images/dots/dots5.png" alt="Shadow Image" class="dots-3 img-moving-anim3">
+						<ParticleWave />
 					</div>
 				</div>
 			</section>
@@ -228,28 +233,26 @@ export default {
 							<h2 class="title">
 								About Us
 							</h2>
-							<p class="desc" align="justify"> The 4th International Conference on Artificial Intelligence and
-								Data Sciences
-								(AiDAS2022) is organized by the Faculty of Computer and Mathematical Sciences, Universiti
-								Teknologi MARA, Perak Branch. The co-organizers for AiDAS2022 are Universiti Tunku Abdul
-								Rahman
-								(UTAR) and Universitas Al-Azhar, Indonesia (UAI).
-								AiDAS2022 also is part of the INSPIRED2022 event organized by UiTM Perak.
-								This conference is technically co-sponsored by IEEE Computer Society, Malaysia Chapter.
+							<p class="desc" align="justify">The International Conference on Artificial Intelligence and Data
+								Sciences (AiDAS) is an annual conference organized by College of Computing, Informatics and
+								Media, Universiti Teknologi MARA, Perak Branch. For the fourth edition of AiDAS (AiDAS2023),
+								it will be co-organized by Universiti Tunku Abdul Rahman (UTAR), Malaysia and Universitas
+								Al-Azhar, Indonesia (UAI). This conference will be technically co-sponsored by IEEE Computer
+								Society, Malaysia Chapter. AiDAS2023 is also one of the programs organized under Ipoh
+								International Summit On Professionalism, Research & Education (INSPIREd2023).
 								<br><br>
-								The conference aims to form an inclusive meeting place for researchers,
-								academics, and practitioners to discuss fundamental and innovative issues related to
-								Artificial
-								Intelligence and Data Sciences.
-								The theme of AiDAS2022 is Artificial Intelligence and Data Sciences: Championing Innovations
-								in
-								Artificial Intelligence and Data Sciences
-								for Sustainable Future ...
+								We are delighted to welcome you to this research conference with proceeding publication in
+								IEEE Xplore (indexed by SCOPUS), where we bring together scholars, researchers, and
+								professionals internationally to present and discuss the latest advancements in the field of
+								artificial intelligence and data science. This conference serves as a platform for the
+								exchange of knowledge, fostering collaboration, and igniting new ideas to drive future
+								progress in these rapidly evolving disciplines ...
 							</p>
 							<div class="dots img-moving-anim3">
 								<img src="../assets/images/dots/dots7.png" alt="Shadow Image">
 							</div>
-							<button class="custom-btn2 video-btn">Read More&nbsp;&nbsp;></button>
+							<button type="button" onclick="window.location.href='/about'" class="custom-btn2 video-btn">Read
+								More&nbsp;&nbsp;></button>
 						</div>
 					</div>
 				</div>
@@ -481,7 +484,7 @@ export default {
 												REVIEWERS!</p>
 											<p class="desc">
 												Those interested may fill in the form at this link: <a target="_blank"
-													href="#">CLICK
+													href="https://forms.gle/Bz86uuU4AhjKk5kL8">CLICK
 													HERE</a>
 											</p>
 										</div>
@@ -498,6 +501,168 @@ export default {
 			<hr>
 		</div>
 
+		<!-- committee sec start -->
+		<section id="committee-members" class="schedule-sec">
+			<div class="container mb-4">
+				<div class="section-head text-center col-xl-8 m-auto mb-5">
+					<span class="label mb-4">Our TEAMs</span>
+					<h2 class="title">
+						Committee Members
+					</h2>
+				</div>
+				
+                <table class="default-table">
+                    <tbody>
+                        <tr>
+                            <td>Chair</td>
+                            <td>:</td>
+                            <td>
+                                Khairulliza Ahmad Salleh
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Co-Chairs</td>
+                            <td>:</td>
+                            <td>
+								Prof. Ts. Dr. Shukor Abd Razak,<br>
+                                Mohamed Imran Mohamed Ariff,<br>
+                                Nor Azura Md. Ghani
+                            </td>
+                        </tr>
+						<tr>
+                            <td>Co-Publication Chair</td>
+                            <td>:</td>
+                            <td>
+								Ts. Dr. Farhan Bin Mohamed
+                            </td>
+                        </tr>
+						<tr>
+                            <td>Co-Finance Chair</td>
+                            <td>:</td>
+                            <td>
+								Ts. Dr Lim Kok Cheng
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Secretary</td>
+                            <td>:</td>
+                            <td>
+                                Anis Zafirah Azmi
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Treasurer</td>
+                            <td>:</td>
+                            <td>
+                                Norhasliza Ahmad,<br>
+                                Lim Kok Cheng
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Event Manager</td>
+                            <td>:</td>
+                            <td>
+                                Rusliza binti Ahmad
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Conference Management</td>
+                            <td>:</td>
+                            <td>
+                                Zalikha Zulkifli
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Proceeding &amp; Publication</td>
+                            <td>:</td>
+                            <td>
+                                Masurah Mohamad,<br>
+                                Lau Sian Lun
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Publicity</td>
+                            <td>:</td>
+                            <td>
+                                Pradeep Isawasan
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Logistic</td>
+                            <td>:</td>
+                            <td>
+                                Mohd Hafiz Mohamad Hamzah
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+			</div>
+			<div class="shape">
+				<img src="../assets/images/shape/2.svg" alt="Shape">
+			</div>
+		</section>
+		<!-- committee sec end -->
+		<div class="container">
+			<hr>
+		</div>
+
+		<!-- sponsor sec start -->
+		<section class="sponsorships-section alternate2">
+			<div class="container">
+				<p style="font-size: 18px; color: #797979;" class="mb-3">Sponsorships</p>
+				<div class="row">
+					<div class="title-column col-xl-3 col-lg-4 col-md-12">
+						<div class="sec-title">
+							<h2>Co-Organized <br> by </h2>
+						</div>
+					</div>
+					<div class="title-column col-xl-9 col-lg-8 col-md-12">
+						<div class="sponsors-outer">
+							<div class="row">
+								<div class="client-block col-lg-4 col-md-6 col-sm-12" data-aos="fade-left"
+									data-aos-delay="300">
+									<figure class="image-box" style="padding: 0 20px;"><a><img
+												src="../assets/images/logo/UTAR-logo.png" alt=""></a>
+									</figure>
+								</div>
+								<div class="client-block col-lg-4 col-md-6 col-sm-12" data-aos="fade-left" data-aos-delay="300">
+									<figure class="image-box"><a href="#"><img src="../assets/images/logo/UAI-Logo.png" alt=""></a>
+									</figure>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="title-column col-xl-3 col-lg-4 col-md-12">
+						<div class="sec-title">
+							<h2>Technically <br> Co-Sponsored </h2>
+							<div class="divider"></div>
+						</div>
+					</div>
+					<div class="title-column col-xl-9 col-lg-8 col-md-12">
+						<div class="sponsors-outer">
+							<div class="row">
+								<div class="client-block col-lg-4 col-md-6 col-sm-12" data-aos="fade-left" data-aos-delay="300">
+									<figure class="image-box" style="padding: 0 20px;"><a href="#"><img
+												src="../assets/images/logo/ieee-logo.png" alt=""></a>
+									</figure>
+								</div>
+								<div class="client-block col-lg-4 col-md-6 col-sm-12" data-aos="fade-left" data-aos-delay="600">
+									<figure class="image-box"><a href="#"><img class="p-3" src="../assets/images/logo/ics-logo.png" alt=""></a>
+									</figure>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- sponsor sec start -->
+		<div class="container">
+			<hr>
+		</div>
 
 		<!-- fees sec start -->
 		<section id="fees" class="pricing-sec">
