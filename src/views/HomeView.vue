@@ -529,20 +529,6 @@ export default {
                                 Nor Azura Md. Ghani
                             </td>
                         </tr>
-						<tr>
-                            <td>Co-Publication Chair</td>
-                            <td>:</td>
-                            <td>
-								Ts. Dr. Farhan Bin Mohamed
-                            </td>
-                        </tr>
-						<tr>
-                            <td>Co-Finance Chair</td>
-                            <td>:</td>
-                            <td>
-								Ts. Dr Lim Kok Cheng
-                            </td>
-                        </tr>
                         <tr>
                             <td>Secretary</td>
                             <td>:</td>
@@ -554,8 +540,8 @@ export default {
                             <td>Treasurer</td>
                             <td>:</td>
                             <td>
-                                Norhasliza Ahmad,<br>
-                                Lim Kok Cheng
+								Ts. Dr Lim Kok Cheng,<br>
+                                Norhasliza Ahmad
                             </td>
                         </tr>
                         <tr>
@@ -576,8 +562,8 @@ export default {
                             <td>Proceeding &amp; Publication</td>
                             <td>:</td>
                             <td>
-                                Masurah Mohamad,<br>
-                                Lau Sian Lun
+								Ts. Dr. Farhan Bin Mohamed,<br>
+                                Masurah Mohamad
                             </td>
                         </tr>
                         <tr>
